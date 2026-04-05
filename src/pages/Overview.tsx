@@ -14,12 +14,12 @@ export default function Overview() {
     .filter((t: any) => t.type === "expense")
     .reduce((a: number, b: any) => a + b.amount, 0);
 
-  // 📊 Monthly chart (basic)
+  // Monthly chart (basic)
   const chartData = [
     { month: "Apr", income, expenses },
   ];
 
-  // 📊 Category breakdown
+  // Category breakdown
   const categoryMap: any = {};
   transactions.forEach((t: any) => {
     categoryMap[t.category] = (categoryMap[t.category] || 0) + t.amount;

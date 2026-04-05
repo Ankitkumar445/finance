@@ -9,11 +9,11 @@ export default function Transactions() {
   const [typeFilter, setTypeFilter] = useState("all");
   const [showModal, setShowModal] = useState(false);
 
-  // ✅ SORT STATE
+  // SORT STATE
   const [sortField, setSortField] = useState("date");
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
 
-  // ✅ SORT FUNCTION
+  // SORT FUNCTION
   const handleSort = (field: string) => {
     if (sortField === field) {
       setSortOrder(sortOrder === "asc" ? "desc" : "asc");
@@ -23,7 +23,7 @@ export default function Transactions() {
     }
   };
 
-  // ✅ FILTER + SEARCH + SORT
+  // FILTER + SEARCH + SORT
   const filtered = transactions
     .filter((t: any) =>
       t.description.toLowerCase().includes(search.toLowerCase())
